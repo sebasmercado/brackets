@@ -1,0 +1,17 @@
+{
+	"id": "wonderwall",
+	"title": "Wonderwall",
+	"artist": "Oasis",
+	"bpm": 87,
+	"beatsPerBar": 4,
+	"difficulty": "media",
+	"strumPattern": "↓ ↓ ↓ ↑ ↑ ↓ ↑",
+	"arrangement": "Simplificada sin cejilla: Em7→Em, Dsus4→D, A7sus4→A. Para el tono original usá cejilla en el 2º traste.",
+	"sections": [
+		{ "name": "Intro", "bars": [["Em"], ["G"], ["D"], ["A"]], "repeat": 2 },
+		{ "name": "Estrofa", "bars": [["Em"], ["G"], ["D"], ["A"]], "repeat": 4 },
+		{ "name": "Pre-estribillo", "bars": [["C"], ["D"], ["Em"], ["Em"]], "repeat": 2 },
+		{ "name": "Estribillo", "bars": [["C"], ["Em"], ["G"], ["Em"]], "repeat": 3 },
+		{ "name": "Final", "bars": [["C"], ["Em"], ["G"], ["Em"], ["Em"]] }
+	]
+}

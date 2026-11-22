@@ -1,0 +1,62 @@
+# Publica AirJam (airjam/) en GitHub Pages: https://<usuario>.github.io/<repo>/
+# Requisito único: Settings → Pages → Source: "GitHub Actions".
+name: AirJam · Deploy a GitHub Pages
+
+on:
+  push:
+    branches: [master, claude/airjam-acoustic-guitar-pwa-te1z6i]
+    paths: ['airjam/**', '.github/workflows/airjam-pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: airjam-pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: airjam
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: airjam/package-lock.json
+
+      - name: Instalar dependencias (copia también el WASM de MediaPipe)
+        run: npm ci
+
+      - name: Type-check y tests
+        run: |
+          npm run check
+          npm test
+
+      - name: Build
+        env:
+          BASE_PATH: /${{ github.event.repository.name }}
+        run: npm run build
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: airjam/build
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
