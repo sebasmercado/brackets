@@ -60,6 +60,10 @@ La cámara requiere **HTTPS o localhost**. Para probar en el celular dentro de t
 | `npm test` | Tests unitarios (Vitest) |
 | `npm run icons` | Regenera los iconos PNG placeholder |
 
+### Publicar en GitHub Pages
+
+El workflow `.github/workflows/airjam-pages.yml` (en la raíz del repo) hace type-check, tests, build con `BASE_PATH=/<repo>` y publica en `https://<usuario>.github.io/<repo>/`. Solo hace falta activar **Settings → Pages → Source: GitHub Actions** una vez. Para probar localmente con ruta base: `BASE_PATH=/brackets npm run build && BASE_PATH=/brackets npm run preview`.
+
 **Consejos de uso:** alejate ~1,5 m con los hombros visibles, buena luz frontal y auriculares (evita que el micrófono/parlante del entorno moleste). El brazo del mástil se estira hacia el costado; la mano de rasgueo cruza las cuerdas sobre la boca de la guitarra.
 
 ---

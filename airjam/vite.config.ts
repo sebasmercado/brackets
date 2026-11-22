@@ -1,7 +1,14 @@
 import adapter from '@sveltejs/adapter-static';
 import tailwindcss from '@tailwindcss/vite';
 import { withPwa } from '@vite-pwa/sveltekit';
+import process from 'node:process';
 import { defineConfig } from 'vite';
+
+/**
+ * Ruta base del sitio. Vacía en local; `/brackets` en GitHub Pages
+ * (la define el workflow de deploy con la variable BASE_PATH).
+ */
+const base = (process.env.BASE_PATH ?? '') as '' | `/${string}`;
 
 /**
  * SvelteKit 3: la configuración de Kit (antes `svelte.config.js`) se pasa
@@ -14,6 +21,7 @@ export default defineConfig({
 		withPwa(
 			{
 				adapter: adapter({ fallback: '404.html' }),
+				paths: { base },
 				compilerOptions: { runes: true }
 			},
 			{
@@ -25,8 +33,8 @@ export default defineConfig({
 					description:
 						'Tocá una guitarra acústica en el aire con tu cámara: tracking de manos en tiempo real y síntesis de cuerdas Karplus-Strong.',
 					lang: 'es',
-					start_url: '/',
-					scope: '/',
+					start_url: './',
+					scope: './',
 					display: 'fullscreen',
 					display_override: ['fullscreen', 'standalone'],
 					orientation: 'any',
@@ -52,7 +60,7 @@ export default defineConfig({
 					globIgnores: ['**/mediapipe/**'],
 					runtimeCaching: [
 						{
-							urlPattern: ({ url }) => url.pathname.startsWith('/mediapipe/'),
+							urlPattern: ({ url }) => url.pathname.includes('/mediapipe/wasm/'),
 							handler: 'CacheFirst',
 							options: {
 								cacheName: 'airjam-mediapipe-wasm',

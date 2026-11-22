@@ -10,6 +10,7 @@
 -->
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { resolve } from '$app/paths';
 	import { AudioEngine } from '#lib/instruments/engine/AudioEngine.ts';
 	import type { KarplusStrongSynth } from '#lib/instruments/engine/KarplusStrongSynth.ts';
 	import { findInstrument } from '#lib/instruments/registry.ts';
@@ -73,7 +74,11 @@
 		syncPluginConfig();
 
 		const { VisionTracker } = await import('#lib/tracking/VisionTracker.ts');
-		tracker = new VisionTracker({ onStage: (s) => onStatus(STAGE_LABELS[s]) });
+		tracker = new VisionTracker({
+			// Respeta la ruta base (ej. GitHub Pages en /brackets).
+			wasmBasePath: `${resolve('/')}mediapipe/wasm`,
+			onStage: (s) => onStatus(STAGE_LABELS[s])
+		});
 		await tracker.init();
 
 		warmupAudio();

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { asset } from '$app/paths';
 	import ChordHud from '#lib/components/ChordHud.svelte';
 	import ControlBar from '#lib/components/ControlBar.svelte';
 	import Stage from '#lib/components/Stage.svelte';
@@ -87,7 +88,7 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:title" content="AirJam — Air Guitar acústica" />
 	<meta property="og:description" content="Guitarra virtual controlada con tus manos. Gratis, offline y sin instalar nada." />
-	<meta property="og:image" content="/icons/icon-512.png" />
+	<meta property="og:image" content={asset('icons/icon-512.png')} />
 	<meta property="og:locale" content="es_AR" />
 	<meta name="twitter:card" content="summary" />
 	{@html `<script type="application/ld+json">${JSON.stringify({
