@@ -1,0 +1,17 @@
+{
+	"id": "lamento-boliviano",
+	"title": "Lamento Boliviano",
+	"artist": "Enanitos Verdes",
+	"bpm": 96,
+	"beatsPerBar": 4,
+	"difficulty": "fácil",
+	"strumPattern": "↓ ↓ ↑ ↑ ↓ ↑",
+	"arrangement": "Arreglo simplificado de fogón con acordes abiertos; ajustá el JSON si preferís otra versión.",
+	"sections": [
+		{ "name": "Intro", "bars": [["Am"], ["F"], ["C"], ["G"]], "repeat": 2 },
+		{ "name": "Estrofa", "bars": [["Am"], ["F"], ["C"], ["G"]], "repeat": 4 },
+		{ "name": "Puente", "bars": [["F"], ["G"], ["Am"], ["Am"]], "repeat": 2 },
+		{ "name": "Estribillo", "bars": [["C"], ["G"], ["Am"], ["F"]], "repeat": 4 },
+		{ "name": "Final", "bars": [["C"], ["G"], ["Am"], ["Am"]] }
+	]
+}

@@ -1,0 +1,16 @@
+{
+	"id": "knockin-on-heavens-door",
+	"title": "Knockin' on Heaven's Door",
+	"artist": "Bob Dylan",
+	"bpm": 68,
+	"beatsPerBar": 4,
+	"difficulty": "fácil",
+	"strumPattern": "↓ ↓ ↑ ↑ ↓ ↑",
+	"arrangement": "Progresión clásica G–D–Am / G–D–C en tonalidad original.",
+	"sections": [
+		{ "name": "Intro", "bars": [["G"], ["D"], ["Am"], ["Am"], ["G"], ["D"], ["C"], ["C"]] },
+		{ "name": "Estrofa", "bars": [["G"], ["D"], ["Am"], ["Am"], ["G"], ["D"], ["C"], ["C"]], "repeat": 2 },
+		{ "name": "Estribillo", "bars": [["G"], ["D"], ["Am"], ["Am"], ["G"], ["D"], ["C"], ["C"]], "repeat": 2 },
+		{ "name": "Final", "bars": [["G"], ["D"], ["C"], ["G"]] }
+	]
+}

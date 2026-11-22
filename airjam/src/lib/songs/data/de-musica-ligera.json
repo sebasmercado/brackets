@@ -1,0 +1,16 @@
+{
+	"id": "de-musica-ligera",
+	"title": "De Música Ligera",
+	"artist": "Soda Stereo",
+	"bpm": 126,
+	"beatsPerBar": 4,
+	"difficulty": "fácil",
+	"strumPattern": "↓ ↓ ↑ ↑ ↓ ↑",
+	"arrangement": "Versión simplificada de fogón: un acorde por compás sobre el riff principal.",
+	"sections": [
+		{ "name": "Intro", "bars": [["Bm"], ["G"], ["D"], ["A"]], "repeat": 2 },
+		{ "name": "Estrofa", "bars": [["Bm"], ["G"], ["D"], ["A"]], "repeat": 4 },
+		{ "name": "Estribillo", "bars": [["Bm"], ["G"], ["D"], ["A"]], "repeat": 4 },
+		{ "name": "Final", "bars": [["Bm"], ["G"], ["D"], ["A"], ["Bm"]] }
+	]
+}
